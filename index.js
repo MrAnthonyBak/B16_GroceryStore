@@ -29,7 +29,7 @@ function getUppercaseNames(items) {
   // TODO: use `map`
   getUppercaseNames = INVENTORY.map((logName) => {
     console.log(logName.name.toUpperCase());
-})
+  })
 }
 
 
