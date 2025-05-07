@@ -14,9 +14,10 @@
  * @param {Item[]} items - array of items
  */
 function logNames(items) {
-  INVENTORY.forEach((logName) => {
-    console.log(logName.name);
-  })
+  // TODO: use `forEach`
+  items.forEach((item) => {
+    console.log(item.name);
+  });
 }
 
 
@@ -27,9 +28,9 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
-  getUppercaseNames = INVENTORY.map((logName) => {
-    console.log(logName.name.toUpperCase());
-  })
+  return items.map((item) => {
+    return item.name.toUpperCase();
+  });
 }
 
 
@@ -41,9 +42,10 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
-
-  }
-
+  return items.find((item) => {
+    return item.id === id;
+  });
+}
 
 
 
@@ -54,7 +56,13 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+  const found = items.find((item) => {
+    return item.name === name;
+  });
+    return found.price;
 }
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -63,7 +71,10 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  return items.filter((item) => item.category === category);
 }
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -71,7 +82,10 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  return items.reduce((total, item) => total + item.quantity, 0);
 }
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -79,7 +93,10 @@ function countItems(items) {
  */
 function calculateTotalPrice(items) {
   // TODO: use `reduce`
+  return items.reduce((total, item) => total + item.price, 0);
 }
+
+
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
 
